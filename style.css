@@ -1,0 +1,132 @@
+/* Hero with dark overlay so text is readable over image */
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('./img/DSC_0691.JPG') no-repeat center center;
+    background-size: cover;
+	background-position: right bottom;
+    height: 100vh;
+    display: flex;
+	justify-content: center;
+    align-items: center;
+    color: rgb(231, 230, 230);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content{
+	text-align: center;
+	padding: 0 20px;
+    max-width: 1100px;
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    line-height: 1.05;
+    margin: 0 0 0.5rem 0;
+    text-align: center;
+    letter-spacing: 0.5px;
+	font-size: 100px;
+}
+.hero-subtitle{
+    font-family: 'Inter', sans-serif;
+    font-size: 1.4rem;
+    margin-top: 30px;
+    opacity: 0.95;
+	font-size: 50px;
+}
+
+    /* Alatta lévő cím szekció */
+.info-section {
+    padding: 60px 20px;
+    text-align: center;
+	background-color: #ada195;
+	background: linear-gradient(to left, #adaaa7, #8d8175);
+}
+
+.info-section h2 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+	font-family: "Lato", sans-serif;
+	color: rgb(238, 234, 217);
+}
+
+.info-section p {
+    font-size: 1.5rem;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+	color: rgb(238, 234, 217);
+}
+
+.info-section img {
+  width: 90%;      
+  max-width: 300px; 
+  height: auto;    
+  border-radius: 10px; 
+  object-fit: cover; 
+}
+
+    
+.info-row{
+    display: flex;
+    gap: 0;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: stretch;
+}
+
+.info-left{
+    flex: 1 1 50%;
+    background: url('img/IMG_3042%20szórólapra.jpg') center center / cover no-repeat;
+    min-height: 50vh;
+}
+
+.info-right{
+    flex: 1 1 50%;
+    display: flex;
+    align-items: center;
+    padding: 3rem 4rem;
+    color: #efe9dd;
+}
+
+.info-inner{
+    max-width: 560px;
+    margin: 0 auto;
+}
+
+    
+ @media (max-width: 992px) {
+    .hero h1 {
+   	 font-size: 4rem;
+    }
+      .hero-subtitle{ font-size: 2rem; }
+}
+
+    @media (max-width: 768px) {
+      .hero {
+        height: 70vh;
+        background-position: right bottom 30%;
+      }
+      .hero h1 {
+        font-size: 2.4rem;
+      }
+      .hero-subtitle{ font-size: 1.1rem; }
+
+      .info-section h2 {
+        font-size: 2rem;
+      }
+
+      /* Stack the info columns on small screens */
+      .info-row{
+        flex-direction: column;
+      }
+
+      .info-left{
+        min-height: 40vh;
+        width: 100%;
+      }
+
+      .info-right{
+        padding: 2rem;
+      }
+    }

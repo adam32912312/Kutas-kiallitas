@@ -15,14 +15,16 @@
 </head>
 <body>
     
+  <!-- landingpage -->
   <section id="landing-page" class="landing element">
     <div class="container">
       <div class="row align-items-center">
         <!-- Bal oldal: szöveg -->
         <div class="col-md-6 text-center text-md-start mb-4 mb-md-0 fade-slide-left">
-          <h1 class="cím">Kutas — kiállítás</h1>
+          <h1 class="cím">Kutas—kiállítás</h1>
           <p class="alcím">Nyitvatartás</p>
-          <p class="alalcím">November 22-én (szombaton) 15:00-18:00-ig</p>
+          <p class="alalcím">November 22-én (szombaton)</p>
+          <p class="alalcím">15:00-18:00-ig</p>
           <!-- <a href="#section1"  class="btn btn-light btn-lg mt-3 gomb">Tudjon meg többet</a> -->
         </div>
         <!-- Jobb oldal: kép -->
@@ -33,10 +35,26 @@
     </div>
   </section>
 
+<!-- footer -->
+  <footer class="custom-footer">
+    <div class="container">
+      <div class="row">
+      <!-- Bal oldal -->
+        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+          <h5 class="footer-title">Köszönjük az adományokat a Kutas László Kulturális és Művészeti Alapítvány számára!</h5>
+        </div>
+      <!-- Jobb oldal -->
+        <div class="col-md-6 text-center text-md-end">
+          <p class="footer-text">
+            Számlaszám:
+          <p class="szamlaszam">11737083-24692803</p>
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
 
-
-  
-  <!-- landing page effekt -->
+<!-- landing page effekt -->
 <script>
 document.addEventListener("DOMContentLoaded", () => {
   const targets = document.querySelectorAll(".fade-slide-left, .fade-slide-right");
@@ -52,34 +70,5 @@ document.addEventListener("DOMContentLoaded", () => {
   targets.forEach(t => observer.observe(t));
 });
 </script>
-
-
-
-
-
-
-
-  <footer class="custom-footer">
-  <div class="container">
-    <div class="row">
-
-      <!-- Bal oldal -->
-      <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-        <h5 class="footer-title">Köszönjük szépen az adományokat a Kutas László Kulturális és Művészeti Alapítvány számára!</h5>
-      </div>
-
-      <!-- Jobb oldal -->
-      <div class="col-md-6 text-center text-md-end">
-        <p class="footer-text">
-          Számlaszám:
-          <p class="szamlaszam">11737083-24692803</p>
-        </p>
-      </div>
-
-    </div>
-  </div>
-</footer>
-
-
 </body>
 </html>

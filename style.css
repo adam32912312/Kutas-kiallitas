@@ -158,12 +158,27 @@ section {
   font-weight: 700;
   letter-spacing: 1px;
   color: #f5f5f5;
-  margin-bottom: 50px;
+  margin-bottom: 10px;
   text-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
   transition: all 0.3s ease;
 }
 
 .cím:hover {
+  color: #fff;
+  text-shadow: 0 6px 25px rgba(0, 0, 0, 0.5), 0 0 30px rgba(88, 85, 76, 0.3);
+}
+
+.cím1{
+  font-size: 2.3rem;
+  font-weight: 550;
+  letter-spacing: 1px;
+  color: #f5f5f5;
+  margin-bottom: 50px;
+  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.cím1:hover {
   color: #fff;
   text-shadow: 0 6px 25px rgba(0, 0, 0, 0.5), 0 0 30px rgba(88, 85, 76, 0.3);
 }
@@ -212,6 +227,11 @@ section {
 @media (max-width: 767px) {
   .cím {
     font-size: 2.2rem;
+    margin-bottom: 30px;
+  }
+
+  .cím1 {
+    display: none;
   }
 
   .alcím {

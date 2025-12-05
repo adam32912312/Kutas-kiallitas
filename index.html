@@ -14,7 +14,29 @@
 
 </head>
 <body>
-    
+
+<nav class="navbar navbar-expand-lg nav">
+      <div class="container-fluid">
+
+        <p class="logo" href="#">Kutas</p>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+      <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+          <ul class="navbar-nav mb-2 mb-lg-0 nav-link">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#landing-page">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#fomenu">Főmenü</a>
+              </li>
+            </ul>
+          </div>
+      </div>
+    </nav>
+
   <!-- landingpage -->
   <section id="landing-page" class="landing element">
     <div class="container">
@@ -31,6 +53,44 @@
         <!-- Jobb oldal: kép -->
         <div class="col-md-6 text-center fade-slide-right">
           <img src="./img/IMG_3042 szórólapra.jpg" alt="kép" class="hero-img">
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- fomenu section -->
+  <section id="fomenu" class="fomenu">
+    <h2>Kutas László</h2>
+    <div class="fomenu-grid">
+      <div class="fomenu-card">
+        <img src="./img/DSC_0662.JPG" alt="fomenu 1">
+        <h3>Kutas László életrajza</h3>
+         <a href="#oneletrajz"><button class="fomenu-button">Tudjon meg többet</button></a>
+      </div>
+      <div class="fomenu-card">
+        <img src="https://via.placeholder.com/300" alt="fomenu kép2">
+        <h3>Lorem ipsum dolor sit.</h3>
+        <a href="#"><button class="fomenu-button">Tudjon meg többet</button></a>
+      </div>
+      <div class="fomenu-card">
+        <img src="https://via.placeholder.com/300" alt="fomenu kép3">
+        <h3>Lorem, ipsum dolor.</h3>
+        <a href="#"><button class="fomenu-button">Tudjon meg többet</button></a>
+      </div>
+    </div>
+  </section>
+
+ <!-- oneletrajz -->
+  <section id="oneletrajz" class="split-section element">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6 fade-slide-left">
+          <img src="./img/DSC_0691.JPG" alt="Kutas kép" class="split-img hero-img">
+        </div>
+        <div class="col-md-6 split-text fade-slide-right">
+          <h2 class="cím-oneletrajz">Kutas László életrajza</h2>
+          <p class="alalcím-oneletrajz">Kutas László (1936, Budapest) magyar szobrász- és éremművész. Gyermekkorát Sopronban töltötte, a Berzsenyi Dániel Evangélikus Líceum diákja volt, majd az Ágoston Ernő-féle rajzszabadiskolában tanult. 1954–1960 között a Magyar Képzőművészeti Főiskolán végezte szobrászati tanulmányait. Kisplasztikái, érméi és köztéri szobrai finom, részletgazdag és lírai stílusukról ismertek. Művészetét több rangos díjjal, köztük a Munkácsy Mihály-díjjal ismerték el.</p>
+          <a href="#fomenu" class="btn fomenu-button">Vissza a főmenüre</a>
         </div>
       </div>
     </div>
@@ -55,6 +115,78 @@
     </div>
   </footer>
 
+<script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.getElementById('hamburger');
+            const navMenu = document.getElementById('navMenu');
+            const navLinks = document.querySelectorAll('nav a');
+            
+            // Hamburger menu toggle
+            hamburger.addEventListener('click', function() {
+                hamburger.classList.toggle('active');
+                navMenu.classList.toggle('active');
+            });
+
+            // Close menu when a link is clicked
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    hamburger.classList.remove('active');
+                    navMenu.classList.remove('active');
+                    
+                    e.preventDefault();
+                    
+                    // Remove active class from all links
+                    navLinks.forEach(l => l.classList.remove('active'));
+                    
+                    // Add active class to clicked link
+                    this.classList.add('active');
+                    
+                    // Get the target section
+                    const targetId = this.getAttribute('href');
+                    const targetSection = document.querySelector(targetId);
+                    
+                    if (targetSection) {
+                        // Add highlight animation to target section
+                        targetSection.classList.add('section-highlight');
+                        setTimeout(() => {
+                            targetSection.classList.remove('section-highlight');
+                        }, 1000);
+                        
+                        // Smooth scroll to target section
+                        targetSection.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // Intersection Observer for nav highlighting
+            const sections = document.querySelectorAll('section');
+            const navOptions = {
+                threshold: 0.3
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // Remove active class from all links
+                        navLinks.forEach(link => link.classList.remove('active'));
+                        // Add active class to corresponding link
+                        const activeLink = document.querySelector(`nav a[href="#${entry.target.id}"]`);
+                        if (activeLink) {
+                            activeLink.classList.add('active');
+                        }
+                    }
+                });
+            }, navOptions);
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+
 <!-- landing page effekt -->
 <script>
 document.addEventListener("DOMContentLoaded", () => {
@@ -71,5 +203,7 @@ document.addEventListener("DOMContentLoaded", () => {
   targets.forEach(t => observer.observe(t));
 });
 </script>
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

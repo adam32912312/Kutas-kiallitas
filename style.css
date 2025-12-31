@@ -185,6 +185,34 @@ button:hover {
   padding: 0.8rem 1rem;
 }
 
+/* navbar logo styling */
+.navbar-brand .navbar-logo {
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  margin-right: 12px;
+  flex-shrink: 0;
+}
+
+.navbar-brand .navbar-logo path {
+  stroke: #ffffff;
+  stroke-opacity: 0.8;
+  stroke-width: 0.8;
+  fill: none;
+  stroke-linejoin: miter;
+  stroke-linecap: square;
+  vector-effect: non-scaling-stroke;
+  shape-rendering: crispEdges;
+}
+
+@media (max-width: 576px) {
+  .navbar-brand .navbar-logo {
+    width: 32px;
+    height: 32px;
+    margin-right: 8px;
+  }
+}
+
 /* landing page */
 .landing {
   height: 90vh;

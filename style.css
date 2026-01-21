@@ -737,6 +737,14 @@ a .fomenu-button,
   margin: auto;
 }
 
+.bevezeto{
+  font-weight: 500 !important;
+}
+
+.email{
+  font-style: italic;
+}
+
 .story-content p {
   line-height: 1.9;
   font-size: 1.05rem;

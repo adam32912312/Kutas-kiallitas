@@ -861,6 +861,55 @@ a.oneletrajz-link .megnyito-button {
   border: 0;
 }
 
+/* Thumbnail image fills the same area as the iframe */
+.video-thumb img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Make the whole card clickable when using .video-link */
+.video-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Play button overlay */
+.play-overlay {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.18s ease, background 0.18s ease;
+}
+
+.play-overlay::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-left: 16px solid #fff;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+}
+
+.video-card:hover .play-overlay {
+  transform: translate(-50%, -50%) scale(1.06);
+  background: rgba(0,0,0,0.6);
+}
+
 .video-title {
   padding: 1rem;
   font-size: 1rem;
